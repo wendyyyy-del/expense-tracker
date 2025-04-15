@@ -1,14 +1,16 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Form from "./Form"
-import Table from "./Table"
+import Two from './Two'
+import { expenseData as pastData } from '../data'
 
 function One() {
+  const [expense, setexpense] = useState(pastData)
   return (
     <div className='formdis'>
-        <Form/>
-        <Table/>
-    </div>
-  )
+        <Form expense={expense} setexpense={setexpense}/>
+        <Two expense={expense}/>
+      </div>
+    )
 }
 
 export default One
